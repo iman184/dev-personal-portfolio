@@ -133,7 +133,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl pt-6 px-2 pb-2 glow-border overflow-visible">
                 <img
-                  src="/profile-photo.ppg"
+                  src="/profile-photo.png"
                   alt="zighed imen"
                   className="w-full h-auto object-contain rounded-2xl"
                 />
