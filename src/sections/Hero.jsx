@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
@@ -5,7 +6,7 @@ import {
   Download,
 } from "lucide-react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import cvFile from "@/assets/CV - Imen ZIGHED (2).pdf";
 
 const skills = [
@@ -28,6 +29,8 @@ const skills = [
 ];
 
 export const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Bg */}
@@ -73,29 +76,32 @@ export const Hero = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
                 The details
                 <br />
                 <span className="text-primary glow-text">make the</span>
                 <br />
                 <span className="font-serif italic font-normal text-foreground">
-                    difference.
+                  difference.
                 </span>
-                </h1>
+              </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-               Zighed Imen, a software engineer focused on React,
-                Next.js, and TypeScript. I spend most of my time building 
-                web apps that are fast, scalable, and actually enjoyable to use."
+                Zighed Imen, a software engineer focused on React, Next.js, and
+                TypeScript. I spend most of my time building web apps that are
+                fast, scalable, and actually enjoyable to use.
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg" onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }>
+              <Button
+                size="lg"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
               <AnimatedBorderButton href={cvFile} download="Zighed-Imen-CV.pdf">
@@ -109,7 +115,10 @@ export const Hero = () => {
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
                 { icon: FaGithub, href: "https://github.com/iman184" },
-                { icon: FaLinkedin, href: "https://www.linkedin.com/in/zighed-imen-2589b31bb/" },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/zighed-imen-2589b31bb/",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -121,21 +130,25 @@ export const Hero = () => {
               ))}
             </div>
           </div>
+
           {/* Right Column - Profile Image */}
-          <div className="relatice animate-fade-in animation-delay-300">
-            {/* Profile Image */}
+          <div className="relative animate-fade-in animation-delay-300">
             <div className="relative max-w-md mx-auto">
               <div
                 className="absolute inset-0 
-              rounded-3xl bg-linear-to-br 
-              from-primary/30 via-transparent 
-              to-primary/10 blur-2xl animate-pulse"
+                rounded-3xl bg-linear-to-br 
+                from-primary/30 via-transparent 
+                to-primary/10 blur-2xl animate-pulse"
               />
               <div className="relative glass rounded-3xl pt-6 px-2 pb-2 glow-border overflow-visible">
+                {/* Profile Image — click to expand/shrink inside the card */}
                 <img
                   src="/profile-photo.png"
                   alt="zighed imen"
-                  className="w-full h-auto object-contain rounded-2xl"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className={`w-full h-auto object-contain rounded-2xl cursor-pointer hover:opacity-90 transition-all duration-500 origin-top ${
+                    isOpen ? "scale-110" : "scale-100"
+                  }`}
                 />
 
                 {/* Floating Badge */}
@@ -147,13 +160,17 @@ export const Hero = () => {
                     </span>
                   </div>
                 </div>
+
                 {/* Top Badge - Seeking an internship */}
                 <div className="absolute -top-4 right-4 glass rounded-xl px-3 py-2 animate-float animation-delay-200">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-                    <span className="text-sm font-medium">Seeking an internship</span>
+                    <span className="text-sm font-medium">
+                      Seeking an internship
+                    </span>
                   </div>
                 </div>
+
                 {/* Stats Badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
                   <div className="text-2xl font-bold text-primary">3+</div>
@@ -174,11 +191,11 @@ export const Hero = () => {
           <div className="relative overflow-hidden">
             <div
               className="absolute left-0 top-0 bottom-0 w-32
-             bg-linear-to-r from-background to-transparent z-10"
+              bg-linear-to-r from-background to-transparent z-10"
             />
             <div
               className="absolute right-0 top-0 bottom-0 w-32
-             bg-linear-to-l from-background to-transparent z-10"
+              bg-linear-to-l from-background to-transparent z-10"
             />
             <div className="flex animate-marquee">
               {[...skills, ...skills].map((skill, idx) => (
@@ -195,7 +212,7 @@ export const Hero = () => {
 
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 
-      animate-fade-in animation-delay-800"
+        animate-fade-in animation-delay-800"
       >
         <a
           href="#about"

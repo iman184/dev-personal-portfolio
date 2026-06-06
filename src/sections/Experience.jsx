@@ -1,53 +1,54 @@
+
 const learningSteps = [
   {
     step: 1,
-    period: "2020",
-    title: "Foundations",
-    subtitle: "HTML & CSS",
-    description: "Structured markup, responsive layouts, and modern CSS (Flexbox, Grid, Tailwind).",
+    period: "2023",
+    title: "HTML & CSS",
+    subtitle: "Web Fundamentals",
+    description: "Learned semantic HTML, responsive design, Flexbox, Grid, and modern CSS."
   },
   {
     step: 2,
-    period: "2021",
-    title: "Core JavaScript",
-    subtitle: "ES6+, DOM, Async",
-    description: "Language fundamentals, asynchronous patterns, and DOM manipulation.",
+    period: "2024",
+    title: "JavaScript",
+    subtitle: "DOM & Logic",
+    description: "Studied ES6+, DOM manipulation, events, asynchronous JavaScript, and APIs."
   },
   {
     step: 3,
-    period: "2022",
-    title: "Advanced JS Tooling",
-    subtitle: "Bundlers, Testing, TypeScript",
-    description: "Build tooling, unit/integration tests, and optionally TypeScript for safer code.",
+    period: "2024",
+    title: "Frontend Projects",
+    subtitle: "Practice & Problem Solving",
+    description: "Built projects such as a Weather App, Chrome Extension, Recipe Finder, and other JavaScript applications."
   },
   {
     step: 4,
-    period: "2023",
-    title: "React & Ecosystem",
-    subtitle: "Components, Hooks, State",
-    description: "Component-driven design, hooks, routing, and state management patterns.",
+    period: "2025",
+    title: "University Projects",
+    subtitle: "PHP & MySQL",
+    description: "Worked on database-driven applications using PHP, MySQL, authentication, and CRUD operations."
   },
   {
     step: 5,
-    period: "2024",
-    title: "Backend Basics",
-    subtitle: "APIs & Databases",
-    description: "Building REST/GraphQL APIs and connecting to databases (Postgres, MongoDB).",
+    period: "2025",
+    title: "React",
+    subtitle: "Modern Frontend",
+    description: "Learned components, hooks, state management, forms, and reusable UI development."
   },
   {
     step: 6,
-    period: "2025",
-    title: "Real Projects",
-    subtitle: "Portfolio & Collaboration",
-    description: "Ship projects, collaborate with others, and learn deployment workflows.",
+    period: "2026",
+    title: "TypeScript & Next.js",
+    subtitle: "Professional Development",
+    description: "Currently improving skills with TypeScript, Next.js, and modern development workflows."
   },
   {
     step: 7,
-    period: "2026",
-    title: "Deployment & DevOps",
-    subtitle: "CI/CD, Hosting",
-    description: "Deploy apps, set up CI/CD pipelines, and monitor production health.",
-  },
+    period: "Future",
+    title: "Full-Stack Engineer",
+    subtitle: "Backend & Cloud",
+    description: "Planning to deepen knowledge in backend development, cloud services, and scalable applications."
+  }
 ];
 
 export const Experience = () => {
