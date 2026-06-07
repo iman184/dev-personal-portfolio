@@ -133,7 +133,7 @@ export const Hero = () => {
 
           {/* Right Column - Profile Image */}
           <div className="relative animate-fade-in animation-delay-300">
-            <div className="relative max-w-md mx-auto">
+            <div className="relative max-w-2xl mx-auto">
               <div
                 className="absolute inset-0 
                 rounded-3xl bg-linear-to-br 
